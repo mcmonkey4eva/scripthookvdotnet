@@ -58,6 +58,12 @@ namespace GTA
 			return;
 		}
 	}
+
+	void ScriptDomain::PLog(String ^logLevel, ... array<String ^> ^message)
+	{
+		Log(logLevel, message);
+	}
+
 	Reflection::Assembly ^HandleResolve(Object ^sender, ResolveEventArgs ^args)
 	{
 		if (args->Name->ToLower()->Contains("scripthookvdotnet"))

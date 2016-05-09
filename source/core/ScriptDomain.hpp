@@ -69,6 +69,7 @@ namespace GTA
 			}
 		}
 
+		static void PLog(System::String ^logLevel, ... array<System::String ^> ^message);
 		void Start();
 		void Abort();
 		static void AbortScript(Script ^script);

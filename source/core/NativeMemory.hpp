@@ -7,8 +7,11 @@ namespace GTA
 {
 	namespace Native
 	{
-		private ref class MemoryAccess abstract sealed
+		public ref class MemoryAccess abstract sealed
 		{
+		public:
+			static void UnlockAllObjects();
+
 		internal:
 			static MemoryAccess();
 

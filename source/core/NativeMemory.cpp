@@ -360,5 +360,17 @@ namespace GTA
 
 			return 0;
 		}
+		
+		void MemoryAccess::UnlockAllObjects()
+		{
+			static auto checkModelBeforeCreation = FindPattern("\x48\x85\xC0\x0F\x84\x00\x00\x00\x00\x8B\x48\x50", "xxxxx????xxx");
+			if (!checkModelBeforeCreation)
+			{
+				GTA::ScriptDomain::PLog("[ERROR]", "Object Spawn Unlocker: This version does not work with your current game version.");
+				return;
+			}
+			memset((void*)checkModelBeforeCreation, 0x90, 24);
+		}
+
 	}
 }
